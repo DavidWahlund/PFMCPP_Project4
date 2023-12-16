@@ -10,25 +10,25 @@
  1) write 3 UDTs named FloatType, DoubleType, IntType.
  
  2) give each UDT the following member functions:
-        add( lhs, rhs );
-        subtract( lhs, rhs );
-        multiply( lhs, rhs );
-        divide( lhs, rhs );
+    add( lhs, rhs );
+    subtract( lhs, rhs );
+    multiply( lhs, rhs );
+    divide( lhs, rhs );
 
        lhs is the left-hand-side of the operation, rhs is the right-hand-side
        e.g. x = 2 + 3
-              '2' is the lhs
-              '3' is the rhs
-              '+' is the operation
+          '2' is the lhs
+          '3' is the rhs
+          '+' is the operation
 
  3) implement the appropriate action in the member function. 
-         a) Be aware that floating point division by 0 is legal, but integer division by 0 will crash your program.  
-         b) Handle this possible input when you write your divide() functions.
-         c) you should warn the user if they're doing floating-point-division-by-zero but not prevent the division from happening
-         d) you should warn AND prevent the division from happening if it is an integer-division-by-zero.
+     a) Be aware that floating point division by 0 is legal, but integer division by 0 will crash your program.  
+     b) Handle this possible input when you write your divide() functions.
+     c) you should warn the user if they're doing floating-point-division-by-zero but not prevent the division from happening
+     d) you should warn AND prevent the division from happening if it is an integer-division-by-zero.
  
  4) make them return the correct primitive type. e.g. if you're implementing the FloatType::add function, your implementation would start like this:
-        float FloatType::add( float lhs, float rhs )
+    float FloatType::add( float lhs, float rhs )
  
  5) Do not edit main().  your job is to make your UDTs work correctly with the existing main.
        the expected program output is listed after main along with instructions on how to verify it.
@@ -36,6 +36,36 @@
  6) After you finish defining each type/function, click the [run] button.  Clear up any errors or warnings as best you can.
  */
 
+struct FloatType 
+{
+    float FloatType::float add(float lhs, float rhs) 
+    {
+        return lhs + rhs;
+    }
+
+    float FloatType::float subtract(float lhs, float rhs) 
+    {
+        return lhs - rhs;
+    }
+
+    float FloatType::float multiply(float lhs, float rhs) 
+    {
+        return lhs * rhs;
+    }
+
+    float FloatType::float divide(float lhs, float rhs) {
+        if(rhs == 0.0f) {
+            std::cout << "Warning! Dividing float numbers will give unexpected results !" << std::endl;
+            return std::numeric_limits<float>::infinity();
+        }
+        return lhs / rhs;
+    }
+};
+
+struct DoubleType
+{
+    double DoubleType::double add(double lhs, double rhs)
+    }
 /*
 your program should generate the following output EXACTLY.
 This includes the warnings.
