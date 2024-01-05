@@ -35,89 +35,7 @@
 
  6) After you finish defining each type/function, click the [run] button.  Clear up any errors or warnings as best you can.
  */
-#include <iostream>
 
-struct FloatType 
-{
-    float FloatType::add(float lhs, float rhs) 
-    {
-        return lhs + rhs;
-    }
-
-    float FloatType::subtract(float lhs, float rhs) 
-    {
-        return lhs - rhs;
-    }
-
-    float FloatType::multiply(float lhs, float rhs) 
-    {
-        return lhs * rhs;
-    }
-
-    float FloatType::divide(float lhs, float rhs) 
-    {
-        if(rhs == 0.0f) {
-            std::cout << "Warning! Dividing float numbers will give unexpected results !" << std::endl;
-            return std::numeric_limits<float>::infinity();
-    }
-        return lhs / rhs;
-    }
-};
-
-struct DoubleType
-{
-    double DoubleType::double add(double lhs, double rhs)
-    }
-        return lhs + rhs;
-    }
-
-    double DoubleType::double subtract(double lhs, double rhs)
-    }
-        return lhs - rhs;
-    }
-
-    double DoubleType::double multiply(double lhs, double rhs)
-    }
-        return lhs * rhs;
-    }
-
-    double DoubleType::double divide(double lhs, double rhs)
-    }
-        if(rhs == 0.0) {
-            std::cout << "Warning! Dividing double numbers will give unexpected results !" << std::endl;
-            return std::numeric_limits<double>::infinity();
-    }
-        return lhs / rhs;
-    }
-};
-
-struct IntType
-{
-    int IntType::int add(int lhs, int rhs)
-    }
-        return lhs + rhs;
-    }
-
-    int IntType::int subtract(int lhs, int rhs)
-    }
-        return lhs - rhs;
-    }
-    int IntType::int multiply(int lhs, int rhs)
-    }
-        return lhs * rhs;
-    }
-    int IntType::int divide(int lhs, int rhs)
-    }
-        if(rhs == 0) {
-            std::cout << "Warning! Dividing int numbers will give unexpected results !" << std::endl;
-            return std::numeric_limits<int>::infinity();
-    }
-        return lhs / rhs;
-    }
-};
-
-    
-    
 /*
 your program should generate the following output EXACTLY.
 This includes the warnings.
@@ -174,6 +92,62 @@ good to go!
  */
 
 #include <iostream>
+
+
+struct FloatType 
+{
+    float add(float lhs, float rhs) {return lhs + rhs; }
+
+    float subtract(float lhs, float rhs) { return lhs - rhs; }
+
+    float multiply(float lhs, float rhs) { return lhs * rhs; }
+
+    float divide(float lhs, float rhs) 
+    {
+        if(rhs == 0.0f) {
+            std::cout << "Warning! Dividing float numbers returns infinitive !" << std::endl;
+    }
+        return lhs / rhs;
+    }
+};
+
+struct DoubleType
+{
+    double add(double lhs, double rhs){ return lhs + rhs; }
+
+    double subtract(double lhs, double rhs) { return lhs - rhs; }
+
+    double multiply(double lhs, double rhs) { return lhs * rhs; }
+
+    double divide(double lhs, double rhs)
+    {
+        if(rhs == 0.0) 
+        {
+            std::cout << "Warning! Dividing double numbers returns infinitive !" << std::endl;
+        }
+        return lhs / rhs;
+    }
+};
+
+struct IntType
+{
+    int add(int lhs, int rhs) { return lhs + rhs; }
+
+    int subtract(int lhs, int rhs) { return lhs - rhs; }
+
+    int multiply(int lhs, int rhs) { return lhs * rhs; }
+
+    int divide(int lhs, int rhs)
+    {
+        if(rhs == 0) 
+        {
+            std::cout << "Error! Dividing int numbers will crash the program !" << std::endl;
+        }
+        return lhs / rhs;
+    }
+};
+
+
 int main() 
 {
     FloatType ft;
